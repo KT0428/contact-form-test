@@ -1,0 +1,268 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    color: #8B7355;
+}
+
+.header {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1400px;
+    text-align: center;
+}
+
+.header__logo {
+    color: #8B7355;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 40px;
+    display: block;
+    text-align: center;
+}
+
+.contact-form__content {
+    margin: 0 auto;
+    padding: 50px 80px;
+    max-width: 1400px;
+    background: #fff;
+}
+
+.contact-form__heading {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.contact-form__heading h2 {
+    font-size: 35px;
+    font-weight: normal;
+    color: #8B7355;
+    margin: 0;
+}
+
+.form {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.form__group {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 80px;
+    margin-bottom: 30px;
+    align-items: start;
+}
+
+.form__group-title {
+    padding-top: 12px;
+    text-align: left;
+}
+
+.form__label--item {
+    font-weight: normal;
+    color: #8B7355;
+    font-size: 20px;
+}
+
+.form__label--required {
+    margin-left: 8px;
+    color: #ff0000;
+    font-size: 14px;
+}
+
+.form__group-content {
+    width: 100%;
+}
+
+.form__error {
+    margin-top: 5px;
+    color: #ff0000;
+    font-size: 13px;
+}
+
+.form__input--text input {
+    padding: 12px 15px;
+    width: 100%;
+    height: 48px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 14px;
+    box-sizing: border-box;
+    background: #f5f5f5;
+    color: #8B7355;
+}
+
+.form__input--text input::placeholder {
+    color: #C4B5A0;
+}
+
+.form__input--text input:focus {
+    outline: none;
+    border-color: #999;
+    background: #fff;
+}
+
+.form__input--name {
+    display: flex;
+    gap: 20px;
+}
+
+.form__input--name input {
+    padding: 12px 15px;
+    flex: 1;
+    height: 48px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 14px;
+    box-sizing: border-box;
+    background: #f5f5f5;
+    color: #8B7355;
+}
+
+.form__input--name input::placeholder {
+    color: #C4B5A0;
+}
+
+.form__input--name input:focus {
+    outline: none;
+    border-color: #999;
+    background: #fff;
+}
+
+.form__input--radio {
+    display: flex;
+    gap: 40px;
+    padding-top: 12px;
+}
+
+.form__input--radio label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #8B7355;
+}
+
+.form__input--radio input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    background: #fff;
+    margin-right: 8px;
+}
+
+.form__input--radio input[type="radio"]:checked {
+    border-color: #8B7355;
+    background: #8B7355;
+}
+
+.form__input--tel {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.form__input--tel input {
+    padding: 12px 15px;
+    width: 120px;
+    height: 48px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 14px;
+    box-sizing: border-box;
+    text-align: center;
+    background: #f5f5f5;
+    color: #8B7355;
+}
+
+.form__input--tel input:focus {
+    outline: none;
+    border-color: #999;
+    background: #fff;
+}
+
+.form__input--tel span {
+    color: #8B7355;
+    font-size: 16px;
+}
+
+.form__input--select select {
+    padding: 12px 15px;
+    width: 100%;
+    height: 48px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 14px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    box-sizing: border-box;
+    color: #8B7355;
+}
+
+.form__input--select select:focus {
+    outline: none;
+    border-color: #999;
+    background: #fff;
+}
+
+.form__input--textarea textarea {
+    padding: 12px 15px;
+    width: 100%;
+    height: 180px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    box-sizing: border-box;
+    background: #f5f5f5;
+    color: #8B7355;
+}
+
+.form__input--textarea textarea::placeholder {
+    color: #C4B5A0;
+}
+
+.form__input--textarea textarea:focus {
+    outline: none;
+    border-color: #999;
+    background: #fff;
+}
+
+.form__button {
+    margin-top: 50px;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+.form__button-submit {
+    padding: 15px 100px;
+    height: 55px;
+    border: none;
+    border-radius: 4px;
+    background: #8B7355;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.form__button-submit:hover {
+    background: #7A6347;
+}
+
+.form__button-submit:active {
+    background: #695438;
+}
