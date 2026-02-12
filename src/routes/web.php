@@ -13,3 +13,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.top');
     Route::post('/admin/delete', [AdminController::class, 'destroy'])->name('admin.delete');
 });
+
+Route::get('/admin/export', [AdminController::class, 'export'])
+    ->middleware('auth');
