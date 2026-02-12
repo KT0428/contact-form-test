@@ -1,27 +1,67 @@
-.header {
-    background: #000;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    color: #8B7355;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
 }
 
-.header__inner {
-    margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
-}
-
-.header__logo {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 24px;
+.thanks__background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 600px;
+    font-weight: normal;
+    color: whitesmoke;
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
 }
 
 .thanks__content {
-    margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
+    text-align: center;
+    padding: 120px;
+    position: relative;
+    z-index: 1;
 }
 
-.thanks__heading {
-    margin-bottom: 40px;
-    text-align: center;
+.thanks__message {
+    margin-bottom: 200px;
+    margin-top: 140px;
+}
+
+.thanks__message p {
+    font-size: 50px;
+    font-weight: bold;
+    color: #8B7355;
+    margin: 0;
+}
+
+.thanks__button-home {
+    padding: 12px 60px;
+    border: none;
+    border-radius: 0;
+    background: #8B7355;
+    color: #fff;
+    font-size: 25px;
+    font-weight: normal;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s;
+
+.thanks__button-home:hover {
+    background: #7A6347;
+}
+
+.thanks__button-home:active {
+    background: #695438;
+}
 }

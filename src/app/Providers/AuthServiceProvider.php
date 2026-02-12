@@ -27,4 +27,8 @@ class AuthServiceProvider extends ServiceProvider
 
         //
     }
+    public function top()
+    {
+        return view('top');
+    }
 }
