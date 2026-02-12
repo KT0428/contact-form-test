@@ -16,12 +16,13 @@ class CreateNewUser implements CreatesNewUsers
     {
         Validator::make($input, [
             'name' => ['required'],
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required'],
         ], [
             'name.required' => 'お名前を入力してください',
             'email.required' => 'メールアドレスを入力してください',
             'email.email' => 'メールアドレスはメール形式で入力してください',
+            'email.unique' => 'このメールアドレスは既に登録されています',
             'password.required' => 'パスワードを入力してください',
         ])->validate();
 

@@ -3,29 +3,24 @@
 namespace App\Providers;
 
 use App\Actions\Fortify\CreateNewUser;
-use App\Actions\Fortify\ResetUserPassword;
-use App\Actions\Fortify\UpdateUserPassword;
-use App\Actions\Fortify\UpdateUserProfileInformation;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
 use Laravel\Fortify\Fortify;
 
 class FortifyServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
     public function register(): void
     {
-        //
+        $this->app->bind(
+            \Laravel\Fortify\Http\Requests\LoginRequest::class,
+            \App\Http\Requests\LoginRequest::class
+        );
     }
 
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
     {
         Fortify::createUsersUsing(CreateNewUser::class);
@@ -39,22 +34,13 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         Fortify::authenticateUsing(function (Request $request) {
-            $request->validate([
-                'email' => ['required', 'email'],
-                'password' => ['required'],
-            ], [
-                'email.required' => 'メールアドレスを入力してください',
-                'email.email' => 'メールアドレスはメール形式で入力してください',
-                'password.required' => 'パスワードを入力してください',
-            ]);
-
             $user = \App\Models\User::where('email', $request->email)->first();
 
             if ($user && \Illuminate\Support\Facades\Hash::check($request->password, $user->password)) {
                 return $user;
             }
 
-            throw \Illuminate\Validation\ValidationException::withMessages([
+            throw ValidationException::withMessages([
                 'email' => 'ログイン情報が登録されていません',
             ]);
         });

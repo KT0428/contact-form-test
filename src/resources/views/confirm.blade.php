@@ -95,28 +95,40 @@
           </table>
         </div>
         <div class="form__button">
+        <form action="/thanks" method="post">
+          @csrf
+          <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}" />
+          <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}" />
+          <input type="hidden" name="gender" value="{{ $contact['gender'] }}" />
+          <input type="hidden" name="email" value="{{ $contact['email'] }}" />
+          <input type="hidden" name="tel1" value="{{ $contact['tel1'] }}" />
+          <input type="hidden" name="tel2" value="{{ $contact['tel2'] }}" />
+          <input type="hidden" name="tel3" value="{{ $contact['tel3'] }}" />
+          <input type="hidden" name="address" value="{{ $contact['address'] }}" />
+          <input type="hidden" name="building" value="{{ $contact['building'] ?? '' }}" />
+          <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}" />
+          <input type="hidden" name="detail" value="{{ $contact['detail'] }}" />
+
           <button class="form__button-submit" type="submit">送信</button>
-        </div>
-      </form>
+        </form>
 
+        <form action="/correction" method="post">
+          @csrf
+          <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}" />
+          <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}" />
+          <input type="hidden" name="gender" value="{{ $contact['gender'] }}" />
+          <input type="hidden" name="email" value="{{ $contact['email'] }}" />
+          <input type="hidden" name="tel1" value="{{ $contact['tel1'] }}" />
+          <input type="hidden" name="tel2" value="{{ $contact['tel2'] }}" />
+          <input type="hidden" name="tel3" value="{{ $contact['tel3'] }}" />
+          <input type="hidden" name="address" value="{{ $contact['address'] }}" />
+          <input type="hidden" name="building" value="{{ $contact['building'] ?? '' }}" />
+          <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}" />
+          <input type="hidden" name="detail" value="{{ $contact['detail'] }}" />
 
-      <form action="/correction" method="post" style="text-align: center; margin-top: -40px;">
-        @csrf
-        <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}" />
-        <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}" />
-        <input type="hidden" name="gender" value="{{ $contact['gender'] }}" />
-        <input type="hidden" name="email" value="{{ $contact['email'] }}" />
-        <input type="hidden" name="tel1" value="{{ $contact['tel1'] }}" />
-        <input type="hidden" name="tel2" value="{{ $contact['tel2'] }}" />
-        <input type="hidden" name="tel3" value="{{ $contact['tel3'] }}" />
-        <input type="hidden" name="address" value="{{ $contact['address'] }}" />
-        <input type="hidden" name="building" value="{{ $contact['building'] ?? '' }}" />
-        <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}" />
-        <input type="hidden" name="detail" value="{{ $contact['detail'] }}" />
-        <button class="form__button-correction" type="submit">修正</button>
-      </form>
-    </div>
-  </main>
-</body>
+          <button class="form__button-correction" type="submit">修正</button>
+          </form>
+      </div>
+
 
 </html>
