@@ -5,7 +5,7 @@ body {
 }
 
 .header {
-    background-color: #e8e1d8;
+    background-color: #ffffff;
 }
 
 .header__inner {
@@ -13,24 +13,30 @@ body {
     margin: 0 auto;
     padding: 20px 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .header__logo {
-    font-size: 28px;
     color: #8B7355;
     text-decoration: none;
+    font-weight: normal;
+    font-size: 35px;
+    display: block;
+    text-align: center;
 }
 
 .header__link {
-    color: #8B7355;
+    position: absolute;
+    right: 40px;
+    color: #d9c6b6;
     text-decoration: none;
-    border: 1px solid #8B7355;
-    padding: 6px 18px;
-    border-radius: 3px;
     font-size: 14px;
-    background: transparent;
+    border: 1px solid #d9c6b6;
+    padding: 8px 20px;
+    border-radius: 3px;
+    background-color: #f6f6f6;
 }
 
 .login__content {
