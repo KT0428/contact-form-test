@@ -24,8 +24,7 @@
 - nginx
 
 ## ER図
-
-（ER図の画像をここに貼る）
+![alt text](image.png)
 
 ## URL
 
